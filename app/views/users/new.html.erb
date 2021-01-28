@@ -1,23 +1,3 @@
 <h1>Signup for Alpha Blog</h1>
 
-<%= render 'shared/errors', obj: @user %>
-
-<%= form_for @user do |f| %>
-  <p>
-    <%= f.label :username %><br/>
-    <%= f.text_field :username, placeholder: 'Enter Username' %>
-  </p>
-  <p>
-    <%= f.label :email %><br/>
-    <%= f.email_field :email, placeholder: 'Enter Email' %>
-  </p>
-  <p>
-    <%= f.label :password %><br/>
-    <%= f.password_field :password, placeholder: 'Enter Password' %>
-  </p>
-  <p>
-    <%= f.submit "Sign up" %>
-  </p>
-<% end %>
-
-<%= link_to "Back to all articles", articles_path %>
+<%= render 'form' %>
