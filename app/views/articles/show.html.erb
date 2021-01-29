@@ -1,5 +1,15 @@
 <h2>Showing selected article</h2>
-
+<% if @article.user %>
+    <div>
+      <ul>
+        <li>Created by:</li>
+        <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+        <li><%= link_to @article.user.username, user_path(@article.user) %></li>
+        <li><%= link_to @article.user.email, user_path(@article.user) %></li>
+        <li><small><%= pluralize(@article.user.articles.count, 'article') if @article.user.articles %></small></li>
+      </ul>
+    </div>
+<% end %>
 <p>Title: <%= @article.title %></p>
 <p>Description: <%= @article.description %></p>
 
